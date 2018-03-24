@@ -12,15 +12,12 @@
     <div id="root"></div>
     <script src="https://unpkg.com/react@16.0.0-rc.3/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@16.0.0-rc.3/umd/react-dom.development.js"></script>
-    <script type="text/javascript">
-        const root = document.querySelector('#root');
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+    <script type="text/babel">
+        const root = document.querySelector('#root'); const props = { className: 'container', children: 'Hello world' };const element
+        =
+        <div {...props} /> ;ReactDOM.render(element, root);
 
-
-        const element = React.createElement('div', {
-            className: 'container'
-        }, 'Hello world')
-        ReactDOM.render(element, root)
-        console.log(element);
     </script>
 
 </body>
