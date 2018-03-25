@@ -1,24 +1,14 @@
 const root = document.querySelector("#root");
-const Message = props => <div>{props.msg}</div>;
-
-class SayHello extends React.Component {
-  static propTypes = {
-    firstName: PropTypes.string.isRequired,
-    lastName: PropTypes.string.isRequired
-  }
-   render () {
-     const {firstName, lastName} = this.props
-    return (
-      <div>
-        Hello {firstName} {lastName}
-      </div>
-    )
-   }
+function Message ({message}) {
+  return (
+    <div>
+    {
+      message ? <div>{message}</div>
+                : <div>No Message</div> 
+    }
+    </div>
+              )
 }
 
-// SayHello.propTypes = {
-//   firstName: PropTypes.string.isRequired,
-//   lastName: PropTypes.string.isRequired
-// }
 
-ReactDOM.render(<SayHello firstName={true} />, root);
+ReactDOM.render(<Message message={null} />, root);
