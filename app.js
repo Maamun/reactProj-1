@@ -1,14 +1,25 @@
 const root = document.querySelector("#root");
-function Message ({message}) {
-  return (
-    <div>
-    {
-      message ? <div>{message}</div>
-                : <div>No Message</div> 
-    }
-    </div>
-              )
+function tick () {
+  const time = new Date().toLocaleTimeString()
+const element = <div>IT is 
+  <input value={time} />
+  <input value={time} />
+</div>
+ReactDOM.render(element, root);
 }
 
 
-ReactDOM.render(<Message message={null} />, root);
+// DOM version 
+// function tick () {
+//   const time = new Date().toLocaleTimeString()
+// const element = (
+//   `<div>IT is 
+//   <input value=${time} />
+//   <input value=${time} />
+// </div>`
+// )
+// root.innerHTML = element 
+// }
+
+
+ setInterval(tick, 1000);
