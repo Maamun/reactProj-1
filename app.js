@@ -1,9 +1,10 @@
 const root = document.querySelector("#root");
 
-function Box({ style, className = "", ...rest }) {
+function Box({ style, size, ...rest }) {
+  const sizeClassName = size ? `box--${size}` : "box";
   return (
     <div
-      className={`box ${className}`.trim()}
+      className={sizeClassName}
       style={{ padding: 20, ...style }}
       {...rest}
     />
@@ -12,9 +13,9 @@ function Box({ style, className = "", ...rest }) {
 
 const element = (
   <div>
-    <Box className="box--small" style={{ backgroundColor: "lime" }}>box 1</Box>
-    <Box className="box--medium" style={{ backgroundColor: "pink" }}>box 2</Box>
-    <Box className="box--large" style={{ backgroundColor: "lightblue" }}>
+    <Box size="small" style={{ backgroundColor: "lime" }}>box 1</Box>
+    <Box size="medium" style={{ backgroundColor: "pink" }}>box 2</Box>
+    <Box size="large" style={{ backgroundColor: "lightblue" }}>
       box 3
     </Box>
 
